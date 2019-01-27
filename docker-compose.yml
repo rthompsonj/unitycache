@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  unity_cache:
+    build: ./cacheserver
+    container_name: unity_cache_server
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+      - ./data:/opt/cache
+    ports:
+      - "8126:8126"
