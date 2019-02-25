@@ -4,11 +4,8 @@ services:
 
   unity_cache:
     build: ./cacheserver
-    container_name: unity_cache_server
+    container_name: cacheserver
     restart: unless-stopped
-    environment:
-      - PUID=1000
-      - PGID=1000
     volumes:
       - ./config:/config
       - ./data:/opt/cache
